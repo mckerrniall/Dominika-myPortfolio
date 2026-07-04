@@ -1,0 +1,59 @@
+<div class="page">
+  <h1>Academic History</h1>
+
+  <div class="timeline">
+
+    <div
+      class="item"
+      *ngFor="let school of schools; let i = index"
+      (click)="toggle(i)"
+      [class.open]="selectedIndex === i"
+      [class.dim]="selectedIndex !== null && selectedIndex !== i"
+    >
+
+      <!-- HEADER (always visible) -->
+      <div class="header">
+
+        <img [src]="school.logo" [alt]="school.name" />
+
+        <div class="title">
+          <h2>{{ school.name }}</h2>
+          <p>{{ school.subtitle }}</p>
+          <span>{{ school.years }}</span>
+        </div>
+
+      </div>
+
+      <!-- EXPANDED CONTENT -->
+      <div class="content" *ngIf="selectedIndex === i">
+
+        <p class="description">
+          {{ school.description }}
+        </p>
+
+        <div class="grid">
+
+          <div class="box">
+            <h3>Key Areas</h3>
+            <ul>
+              <li *ngFor="let h of school.highlights">
+                {{ h }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h3>Impact</h3>
+            <p>
+              Developed strong academic foundations and prepared for advanced study at university level.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

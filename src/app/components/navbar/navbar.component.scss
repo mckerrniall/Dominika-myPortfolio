@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px;
+    background: #1f2937;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover,
+.active {
+    color: #60a5fa;
+}

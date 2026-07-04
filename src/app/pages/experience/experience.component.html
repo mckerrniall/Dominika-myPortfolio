@@ -1,0 +1,94 @@
+<div class="page">
+  <h1>Experience</h1>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button
+      (click)="activeTab = 'notable'; selectedIndex = null"
+      [class.active]="activeTab === 'notable'"
+    >
+      Notable Experience
+    </button>
+
+    <button
+      (click)="activeTab = 'other'; selectedIndex = null"
+      [class.active]="activeTab === 'other'"
+    >
+      Other Work
+    </button>
+  </div>
+
+  <!-- NOTABLE -->
+  <div class="timeline" *ngIf="activeTab === 'notable'">
+
+    <div
+      class="item"
+      *ngFor="let job of notableJobs; let i = index"
+      (click)="toggle(i)"
+      [class.open]="selectedIndex === i"
+      [class.dim]="selectedIndex !== null && selectedIndex !== i"
+    >
+
+      <div class="header">
+
+        <img [src]="job.logo" [alt]="job.company" />
+
+        <div class="title">
+          <h2>{{ job.company }}</h2>
+          <p>{{ job.role }}</p>
+          <span>{{ job.years }}</span>
+        </div>
+
+      </div>
+
+      <div class="content" *ngIf="selectedIndex === i">
+
+        <p class="description">{{ job.description }}</p>
+
+        <ul>
+          <li *ngFor="let h of job.highlights">{{ h }}</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- OTHER -->
+  <div class="timeline" *ngIf="activeTab === 'other'">
+
+    <div
+      class="item"
+      *ngFor="let job of otherJobs; let i = index"
+      (click)="toggle(i)"
+      [class.open]="selectedIndex === i"
+      [class.dim]="selectedIndex !== null && selectedIndex !== i"
+    >
+
+      <div class="header">
+
+        <img [src]="job.logo" [alt]="job.company" />
+
+        <div class="title">
+          <h2>{{ job.company }}</h2>
+          <p>{{ job.role }}</p>
+          <span>{{ job.years }}</span>
+        </div>
+
+      </div>
+
+      <div class="content" *ngIf="selectedIndex === i">
+
+        <p class="description">{{ job.description }}</p>
+
+        <ul>
+          <li *ngFor="let h of job.highlights">{{ h }}</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

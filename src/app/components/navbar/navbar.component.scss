@@ -1,11 +1,15 @@
 
 /* =========================
-   NAVBAR
+   NAVBAR BASE
 ========================= */
 
 :host {
     display: block;
     width: 100%;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -15,11 +19,11 @@
 
     width: 100%;
     padding: 0 25px;
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
-
-    box-sizing: border-box;
+    align-items: center;
 }
 
 .nav-container {
@@ -29,12 +33,12 @@
     max-width: 1300px;
     min-height: 65px;
 
+    margin: 0 auto;
     padding: 10px 22px;
-    box-sizing: border-box;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     background: rgba(255, 255, 255, 0.08);
 
@@ -50,6 +54,9 @@
 ========================= */
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+
     text-decoration: none;
 
     font-size: 1.5rem;
@@ -58,6 +65,7 @@
 
     color: white;
 
+    flex-shrink: 0;
     transition: opacity 0.25s ease;
 }
 
@@ -72,7 +80,10 @@
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-end;
+
+    gap: 8px;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -82,17 +93,17 @@
     align-items: center;
     justify-content: center;
 
+    padding: 12px 16px;
+
     text-decoration: none;
+    white-space: nowrap;
 
     color: #ddd;
-
-    padding: 12px 18px;
-    border-radius: 999px;
 
     font-size: 0.95rem;
     font-weight: 500;
 
-    white-space: nowrap;
+    border-radius: 999px;
 
     transition:
         transform 0.25s ease,
@@ -100,12 +111,12 @@
         background 0.25s ease;
 }
 
-/* Hover bubble */
+/* Hover effect */
 
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.15);
-    color: white;
     transform: scale(1.06);
+    color: white;
 }
 
 /* Active page */
@@ -117,7 +128,7 @@
 }
 
 /* =========================
-   HAMBURGER BUTTON
+   HAMBURGER MENU
 ========================= */
 
 .menu-toggle {
@@ -126,7 +137,7 @@
     width: 40px;
     height: 40px;
 
-    padding: 9px;
+    padding: 8px;
 
     flex-direction: column;
     justify-content: center;
@@ -180,6 +191,7 @@
 
     .menu-toggle {
         display: flex;
+        flex-shrink: 0;
     }
 
     .nav-links {
@@ -189,11 +201,15 @@
         left: 0;
         right: 0;
 
+        width: 100%;
+
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        justify-content: center;
 
         gap: 6px;
+        margin-left: 0;
         padding: 18px;
 
         background: rgba(20, 20, 20, 0.96);
@@ -225,7 +241,6 @@
 
     .nav-links a {
         width: 100%;
-        box-sizing: border-box;
         padding: 13px 18px;
         text-align: center;
     }

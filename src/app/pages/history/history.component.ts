@@ -41,13 +41,12 @@ export class HistoryComponent {
       subtitle: 'BSc Computer Science',
       years: '2021 - 2025',
       logo: 'assets/images/johnmoore.avif',
-      description:
-        'What you study here blah blah blah',
+      description: 'Modules',
       highlights: [
-        'Being stupud',
-        'Science stuff',
-        'Looking Gorg',
-        'me me me me me'
+        'Year 1: Introduction to Structural and Functional Biochemistry, Physiological Biochemistry, Microbial Biotechnology 1, Cell Biology, Molecular Biology, Practical and Employability Skills.',
+        'Year 2: Methods in Biochemistry, Metabolic Biochemistry, Structural and Functional Biochemistry, Molecular Biology and Functional Genomics, Molecular Cell Biology, Microbial Biotechnology 2.',
+        'Year 3: Sandwich Year - Industrial Placement.',
+        'Year 4: Advanced Structural and Functional Biochemistry, Biochemistry Symposia, Advanced Cell and Molecular Biology, Cancer, Biochemistry Research Project.'
       ]
     }
   ];
